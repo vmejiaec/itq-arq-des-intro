@@ -1,4 +1,6 @@
 ﻿using Consola;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 /*  En el período actual asignar :
     al curso de Prog, los estudiantes juan y maría,
@@ -27,8 +29,9 @@ cursoDB.ListaEstudiantes = new List<Estudiante>() { estudiantePedro, estudianteJ
 periodoActual.ListaCursos = new List<Curso>() { cursoProg, cursoDB, cursoWeb };
 
 // Persistencia
+// Inyección de dependencias
 
-using (ITQContext db = new ITQContext(ITQContext.DBTipo.dbItqSqlServer))
+using (ITQContext db = new ITQContext(ITQDB.getItqDb()))
 {    
     db.Periodos.Add(periodoActual);
     db.SaveChanges();

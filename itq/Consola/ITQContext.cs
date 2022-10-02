@@ -14,11 +14,14 @@ namespace Consola
         public DbSet<Curso> Cursos{ get; set; }
         public DbSet<Estudiante> Estudiantes{ get; set; }
         // Constructor
+        public ITQContext(DbContextOptions<ITQContext> options):base(options)
+        {
+            Init();
+        }
         public ITQContext(DBTipo dbTipo)
         {
             this.connDbItq = ConfigurationManager.ConnectionStrings[dbTipo.ToString()].ConnectionString;
-            Database.EnsureDeleted();
-            Database.EnsureCreated();
+            Init();
         }
         // Métodos
         // Configuración de la conección
@@ -28,6 +31,12 @@ namespace Consola
             {
                 options.UseSqlServer(connDbItq);
             }
+        }
+        // Acciones de inicialización
+        private void Init()
+        {
+            Database.EnsureDeleted();
+            Database.EnsureCreated();
         }
     }
 }
