@@ -1,38 +1,31 @@
 ﻿using Consola;
+using Entidades;
 using Microsoft.EntityFrameworkCore;
-using System.Configuration;
 
-/*  En el período actual asignar :
-    al curso de Prog, los estudiantes juan y maría,
-    al curso de Web, los estudiantes jose y pedro
-    al curso de DB, los estudiante pedro y maría
-*/
-
-// Creación de datos
-// Periodos
-Periodo periodoActual = new Periodo() { Descripcion = "2022 PAO2" };
-// Cursos
-Curso cursoProg = new Curso() { Nombre = "Programación I" };
-Curso cursoWeb = new Curso() { Nombre = "Diseño Web" };
-Curso cursoDB = new Curso() { Nombre = "Bases de Datos" };
-// Estudiantes
-Estudiante estudianteJuan = new Estudiante() { Nombre = "Juan" };
-Estudiante estudiantePedro = new Estudiante() { Nombre = "Pedro" };
-Estudiante estudianteMaria = new Estudiante() { Nombre = "Maria" };
-Estudiante estudianteJose = new Estudiante() { Nombre = "Jose" };
-
-// Registro de estudiantes en sus cursos del período actual
-cursoProg.ListaEstudiantes = new List<Estudiante>() { estudianteJuan, estudianteMaria };
-cursoWeb.ListaEstudiantes = new List<Estudiante>() { estudianteJose, estudianteMaria };
-cursoDB.ListaEstudiantes = new List<Estudiante>() { estudiantePedro, estudianteJuan };
-
-periodoActual.ListaCursos = new List<Curso>() { cursoProg, cursoDB, cursoWeb };
+Periodo periodoActual = Datos.Escenario01();
 
 // Persistencia
 // Inyección de dependencias
-
 using (ITQContext db = new ITQContext(ITQDB.getItqDb()))
 {    
     db.Periodos.Add(periodoActual);
     db.SaveChanges();
+    
+    // Cuál es el estudiante con Id 3
+    var res = db.Estudiantes
+        .Single(estudiante => estudiante.EstudianteId == 3);
+
+    Console.WriteLine(res.EstudianteId + " " + res.Nombre);
+
+    // En qué cursos está matriculada María
+    var cursosMaria = db.Cursos
+        .Include(curso => curso.ListaEstudiantes)
+        .Where(curso => curso.ListaEstudiantes.Exists(estudiante => estudiante.Nombre == "Maria"));
+
+    foreach (var curso in cursosMaria)
+    {
+        Console.WriteLine(curso.Id+" "+curso.Nombre);
+    }
 }
+
+Console.WriteLine("FIN.");
