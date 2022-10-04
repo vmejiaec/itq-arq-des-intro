@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consola", "Consola\Consola.csproj", "{62537210-032A-4E5E-8105-C83496384CA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{81C785DE-5ACC-4039-BBCF-247CD8773AD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio", "Dominio\Dominio.csproj", "{81C785DE-5ACC-4039-BBCF-247CD8773AD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{7D22D5F7-1F5A-4E4E-920F-2EA91205C4B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistencia", "Persistencia\Persistencia.csproj", "{7D22D5F7-1F5A-4E4E-920F-2EA91205C4B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{9F414F87-B0BD-4681-99AD-86C087940124}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logica", "Modelo\Logica.csproj", "{9F414F87-B0BD-4681-99AD-86C087940124}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -15,14 +15,11 @@ namespace Consola
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Estudiante> Estudiantes { get; set; }
         // Constructor
-        public ITQContext(DbContextOptions<ITQContext> options) : base(options)
-        {
-            Init();
-        }
+        public ITQContext(DbContextOptions<ITQContext> options) : base(options) { }
 
         // Métodos
         // Acciones de inicialización
-        private void Init()
+        public void Init()
         {
             Database.EnsureDeleted();
             Database.EnsureCreated();
