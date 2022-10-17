@@ -1,4 +1,4 @@
-﻿using Entidades;
+﻿using Dominio.Entidades;
 
 namespace Consola
 {

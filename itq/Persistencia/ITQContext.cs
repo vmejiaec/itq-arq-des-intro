@@ -1,8 +1,7 @@
-﻿using System.Configuration;
-using Entidades;
+﻿using Dominio.Entidades;
 using Microsoft.EntityFrameworkCore;
 
-namespace Consola
+namespace Persistencia
 {
     public class ITQContext : DbContext
     {

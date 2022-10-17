@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Persistencia;
 using System.Configuration;
 
 namespace Consola

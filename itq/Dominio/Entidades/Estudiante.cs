@@ -1,6 +1,5 @@
-﻿using Dominio;
-
-namespace Entidades
+﻿
+namespace Dominio.Entidades
 {
     public class Estudiante : IEntidad
     {

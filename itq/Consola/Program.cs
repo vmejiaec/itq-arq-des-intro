@@ -1,5 +1,7 @@
 ﻿using Consola;
-using Entidades;
+using Dominio.Entidades;
+using Logica.UnitOfWork;
+using Persistencia;
 
 
 // Persistencia
@@ -44,3 +46,23 @@ using (ITQContext db = new ITQContext(ITQDB.getItqDb()))
 }
 
 Console.WriteLine("FIN.");
+
+using (var uow=new UnitOfWork(new ITQContext(ITQDB.getItqDb())))
+{
+    uow.Estudiantes.Add(new Estudiante() { Nombre = "Grillo el Pepe" });
+    var Juanes = uow.Estudiantes.Find(e => e.Nombre == "Juan").ToList();
+    uow.Estudiantes.RemoveRange(Juanes) ;
+
+    var res = uow.Estudiantes.GetAllWithCursos();
+
+    foreach(var estudiante in uow.Estudiantes.GetAll())
+    {
+        Console.WriteLine(estudiante.Nombre + " " + estudiante.Id);
+        foreach(var curso in estudiante.Cursos)
+        {
+            Console.WriteLine(" - "+curso.Id + " " + curso.Nombre);
+        }
+    }
+
+    uow.Complete();
+}

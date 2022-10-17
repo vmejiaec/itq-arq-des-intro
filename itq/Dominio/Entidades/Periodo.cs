@@ -1,6 +1,4 @@
-﻿using Dominio;
-
-namespace Entidades
+﻿namespace Dominio.Entidades
 {
     public class Periodo : IEntidad
     {
