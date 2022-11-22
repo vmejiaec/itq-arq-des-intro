@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Entidades.Gestion.Curso">
+    <Position X="8" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAACAgAAAAAiAAAAgAAAFgQAAAAAQAAAAAAgAAA=</HashCode>
+      <FileName>Gestion\Curso.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Gestion.Matricula">
+    <Position X="2.5" Y="0.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAIAAgAAAAEgAAAAAEAABAAAAAAAQAAAAAAAACg=</HashCode>
+      <FileName>Gestion\Matricula.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Gestion.Matricula_Det">
+    <Position X="5.75" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAIAEQABAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Gestion\Matricula_Det.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Gestion.Periodo">
+    <Position X="2.75" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAwAAAAAAAAAAgAAAAgAAAAAAAAAAQAAgAAg=</HashCode>
+      <FileName>Gestion\Periodo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Entidades.Gestion.JornadaTipo">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Gestion\Curso.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Entidades.Gestion.MatriculaEstado">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAACAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Gestion\Matricula.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Entidades.Gestion.PeriodoEstado">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Gestion\Periodo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
